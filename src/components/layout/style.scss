@@ -1,0 +1,13 @@
+.layout {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background-color: grey;
+}
+
+.layout__content {
+  position: relative;
+  overflow: hidden;
+
+  flex: 1 0 auto;
+}
