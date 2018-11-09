@@ -1,0 +1,82 @@
+.greetings {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 600px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+}
+
+.greetings-form {
+  padding: 30px 40px 35px;
+}
+
+.greetings-form__input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 70%;
+}
+
+.greetings-form__input-title {
+  color: #023dad;
+  font-size: 24px;
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.greetings-form__input input {
+  height: 45px;
+  padding: 0 16px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #626262;
+  background-color: #fff;
+  border: 2px solid #0076db;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.greetings-form__input input:focus {
+  border-color: #12a9fa;
+}
+
+.greetings-form__submit {
+  width: 29%;
+  display: inline-block;
+  height: 45px;
+  font-size: 28px;
+  font-weight: inherit;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #0073d7;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.greetings-form__submit:hover,
+.greetings-form__submit:active {
+  cursor: pointer;
+  background-color: #0067c1;
+}
+
+.greetings-form__submit:disabled {
+  color: #dedede;
+  cursor: default;
+  background-color: #7c8d99cc;
+}
+
+.greetings-form__text {
+    border: 2px solid #fff;
+    border-radius: 6px;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 28px;
+    resize: none;
+    color: #626262;
+    text-align: center;
+    vertical-align: middle;
+}
