@@ -19,8 +19,7 @@ export function get(url) {
   return fetch(url, {
     method: 'GET',
     headers: new Headers({
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      Accept: 'text/plain',
     }),
   }).then((response) => checkStatus(response))
     .catch((error) => {throw error;});
@@ -35,9 +34,11 @@ export function getGreetings(userName) {
     get(`${urlPrefix}${entryPoint}?name=${userName}`)
       .then((response) => {
         if (response) {
-          dispatch({
-            type: types.GET_GREETINGS_BY_NAME,
-            greetings: response,
+          response.text().then((text) => {
+            dispatch({
+              type: types.GET_GREETINGS_BY_NAME,
+              greetings: text,
+            });
           });
         }
       }).catch(() => {
