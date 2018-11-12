@@ -13,8 +13,8 @@ $ source ~/.profile
 #### Install node
 
 ```bash
-$ nvm install v8.9.1
-$ nvm use 8.9.1
+$ nvm install v8.12.0
+$ nvm use 8.12.0
 ```
 
 Check your version:
