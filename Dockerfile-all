@@ -1,0 +1,20 @@
+FROM node:8.12-alpine AS build
+
+COPY ./ /frontend/
+
+ARG REACT_APP_API_URL_PREFIX=http://localhost:8082/api
+ARG REACT_APP_PROJECT_ENV=prod
+
+RUN cd /frontend/ \
+   && export REACT_APP_API_URL_PREFIX=$REACT_APP_API_URL_PREFIX \
+   && export REACT_APP_PROJECT_ENV=$REACT_APP_PROJECT_ENV \
+   && npm install \
+   && npm rebuild node-sass \
+   && npm run build
+
+
+FROM nginx:alpine AS prod
+
+COPY docker/default.nginx /etc/nginx/conf.d/default.conf
+
+COPY --from=build /frontend/build/ /usr/share/nginx/html/
